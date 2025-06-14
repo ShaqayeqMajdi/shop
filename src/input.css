@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@theme {
+  --font-GreatVibes: Great Vibes, cursive;
+  --font-Quicksand: Quicksand, sans-serif;
+
+  --color-brn-100: #bc8872;
+  --color-brn-200: #996b56;
+  --color-brn-300: #7c5b4c;
+  --color-brn-400: #674f45;
+  --color-brn-500: #674a3d;
+  --color-brn-600: #4e372c;
+  --color-brn-700: #4e372cc9;
+  --color-brn-800: #2d211c;
+}
