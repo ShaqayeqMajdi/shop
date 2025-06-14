@@ -55,11 +55,11 @@ function renderMenProducts(products) {
           </div>
 
           <!-- Main Image -->
-          <div class="relative z-0">
+          <div class="relative z-0 bg-white p-2 rounded-2xl py-4">
             <img
               src="${product.image}"
               alt="${product.title}"
-              class="mx-auto"
+              class="mx-auto w-62 h-72"
             />
             <div class="absolute top-2 right-2 bg-white px-2 rounded-md">
               <img
@@ -127,11 +127,11 @@ function renderWomenProducts(products) {
           </div>
 
           <!-- Main Image -->
-          <div class="relative z-0">
+          <div class="relative z-0 bg-white p-2 rounded-2xl py-4">
             <img
               src="${product.image}"
               alt="${product.title}"
-              class="mx-auto"
+              class="mx-auto w-62 h-72"
             />
             <div class="absolute top-2 right-2 bg-white px-2 rounded-md">
               <img
@@ -197,11 +197,11 @@ function renderJewelryProducts(products) {
           </div>
 
           <!-- Main Image -->
-          <div class="relative z-0">
+          <div class="relative z-0 bg-white p-2 rounded-2xl py-4">
             <img
               src="${product.image}"
               alt="${product.title}"
-              class="mx-auto"
+              class="mx-auto w-62 h-72"
             />
             <div class="absolute top-2 right-2 bg-white px-2 rounded-md">
               <img
@@ -267,13 +267,13 @@ function renderElectronicsProducts(products) {
           </div>
 
           <!-- Main Image -->
-          <div class="relative z-0">
+          <div class="relative z-0 bg-white p-2 rounded-2xl py-4">
             <img
               src="${product.image}"
               alt="${product.title}"
-              class="mx-auto"
+              class="mx-auto w-62 h-72"
             />
-            <div class="absolute top-2 right-2 bg-white px-2 rounded-md">
+            <div class="absolute top-2 right-2 bg-white px- rounded-md">
               <img
                 src="${product.image}"
                 alt=""
