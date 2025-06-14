@@ -620,6 +620,158 @@ function renderWomenPage() {
   }
 }
 
+function renderJewelryPage() {
+  root.innerHTML = `
+   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 my-6 max-w-screen-xl mx-auto">
+      <div
+        class="relative animate-pulse bg-gray-100 rounded-4xl p-4 pt-6 w-full h-auto shadow-xs"
+      >
+        <div class="relative z-0">
+          <div class="bg-slate-300 h-96 rounded-xl"></div>
+          <div
+            class="absolute h-16 w-12 top-2 right-2 bg-slate-200 rounded-md"
+          ></div>
+        </div>
+        <div class="mt-8">
+          <p class="bg-slate-300 w-40 h-8 rounded-lg"></p>
+          <p class="bg-slate-300 w-32 h-8 rounded-lg mt-2"></p>
+        </div>
+        <div class="absolute -bottom-18 -right-2 bg-slate-300 p-4 rounded-3xl">
+          <button
+            class="w-12 h-12 md:w-16 md:h-16 md:text-2xl rounded-2xl bg-slate-200 text-white text-2xl flex items-center justify-center shadow-lg"
+          ></button>
+        </div>
+      </div>
+       <div
+        class="relative animate-pulse bg-gray-100 rounded-4xl p-4 pt-6 w-full h-auto shadow-xs"
+      >
+        <div class="relative z-0">
+          <div class="bg-slate-300 h-96 rounded-xl"></div>
+          <div
+            class="absolute h-16 w-12 top-2 right-2 bg-slate-200 rounded-md"
+          ></div>
+        </div>
+        <div class="mt-8">
+          <p class="bg-slate-300 w-40 h-8 rounded-lg"></p>
+          <p class="bg-slate-300 w-32 h-8 rounded-lg mt-2"></p>
+        </div>
+        <div class="absolute -bottom-18 -right-2 bg-slate-300 p-4 rounded-3xl">
+          <button
+            class="w-12 h-12 md:w-16 md:h-16 md:text-2xl rounded-2xl bg-slate-200 text-white text-2xl flex items-center justify-center shadow-lg"
+          ></button>
+        </div>
+      </div>
+       <div
+        class="relative animate-pulse bg-gray-100 rounded-4xl p-4 pt-6 w-full h-auto shadow-xs"
+      >
+        <div class="relative z-0">
+          <div class="bg-slate-300 h-96 rounded-xl"></div>
+          <div
+            class="absolute h-16 w-12 top-2 right-2 bg-slate-200 rounded-md"
+          ></div>
+        </div>
+        <div class="mt-8">
+          <p class="bg-slate-300 w-40 h-8 rounded-lg"></p>
+          <p class="bg-slate-300 w-32 h-8 rounded-lg mt-2"></p>
+        </div>
+        <div class="absolute -bottom-18 -right-2 bg-slate-300 p-4 rounded-3xl">
+          <button
+            class="w-12 h-12 md:w-16 md:h-16 md:text-2xl rounded-2xl bg-slate-200 text-white text-2xl flex items-center justify-center shadow-lg"
+          ></button>
+        </div>
+      </div>
+    </div>
+  `;
+  fetch("https://fakestoreapi.com/products/category/jewelery")
+    .then((response) => response.json())
+    .then((products) => renderJewelryData(products))
+    .catch((err) =>
+      Toastify({
+        text: "Failed to fetch data",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "center",
+        stopOnFocus: true,
+        style: {
+          background: "linear-gradient(to right, #fff8e1, #c5a46d)",
+          color: "#333",
+        },
+        onClick: function () {},
+      }).showToast()
+    );
+  function renderJewelryData(data) {
+    const template = data
+      .map((item) => {
+        return `<div
+          class="relative group bg-gray-100 rounded-4xl p-4 pt-6 w-full h-auto shadow-xs"
+        >
+          <div
+            class="absolute left-3 top-4 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+          >
+            <div class="flex flex-col gap-3">
+              <button
+                class="w-10 h-10 rounded-full bg-white text-gray-700 hover:bg-rose-500 hover:text-white text-lg shadow"
+              >
+                <i class="fa-regular fa-heart"></i>
+              </button>
+              <button
+                class="w-10 h-10 rounded-full bg-white text-gray-700 hover:text-brn-200 text-lg shadow"
+              >
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Main Image -->
+          <div class="relative z-0 bg-white p-2 rounded-2xl py-4">
+            <img
+              src="${item.image}"
+              alt="${item.title}"
+              class="mx-auto w-62 h-72"
+            />
+            <div class="absolute top-2 right-2 bg-white p-2 rounded-md">
+              <img
+                src="${item.image}"
+                alt=""
+                class="w-8 h-12 object-contain rounded"
+              />
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div class="mt-8 font-Quicksand">
+            <p class="text-xl text-brn-300 font-semibold leading-tight">
+              ${item.title}
+            </p>
+            <p class="text-xl font-semibold text-neutral-700 mt-1">$ ${item.price}</p>
+          </div>
+
+          <!-- Cart Button -->
+          <div class="absolute -bottom-18 -right-2 bg-white p-4 rounded-3xl">
+            <button
+              class="w-12 h-12 md:w-16 md:h-16 md:text-2xl rounded-2xl bg-brn-500 text-white text-2xl flex items-center justify-center shadow-lg transition-transform duration-300 hover:-translate-y-1"
+            >
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </div>
+        </div>`;
+      })
+      .join("");
+    const header = `
+      
+    <div
+      class="w-full h-72 text-center bg-neutral-900 text-4xl md:text-7xl flex items-center justify-center text-white font-extrabold uppercase font-Quicksand">
+      <h1>Jewelry</h1>
+    </div>
+    <div
+          class="grid grid-cols-1 my-6 sm:grid-cols-2 lg:grid-cols-3 gap-16 max-w-screen-xl mx-auto"
+        >${template}</div>
+      `;
+    root.innerHTML = header;
+  }
+}
+
 function renderMainPage() {
   const template = `
         <!-- Main Banner Section -->
@@ -1288,6 +1440,7 @@ function renderMainPage() {
   root.innerHTML = template;
   renderMenProducts();
   renderWomenProducts();
+  renderJewelryProducts();
 }
 
 function checkState() {
@@ -1297,6 +1450,9 @@ function checkState() {
   }
   if (url === "/women") {
     renderWomenPage();
+  }
+  if (url === "/jewelry") {
+    renderJewelryPage();
   } else {
     renderMainPage();
   }
