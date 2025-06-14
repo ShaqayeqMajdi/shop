@@ -18,6 +18,12 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Navbar Section -->
@@ -196,5 +202,63 @@
         </div>
       </div>
     </div>
+
+    <!-- Main Banner Section -->
+    <section class="bg-neutral-950 w-full">
+      <div
+        class="max-w-screen-xl mx-auto px-4 py-12 flex flex-col md:flex-row items-center gap-10"
+      >
+        <!-- Text Left Side -->
+        <div class="md:w-1/2 text-left">
+          <img src="./assets/images/header/dots-lines-3.png" alt="dots" />
+          <p class="text-sm text-gray-400 uppercase tracking-widest mb-4 mt-8">
+            <span
+              class="inline-block w-5 h-[1px] bg-white mr-2 align-middle"
+            ></span>
+            Limited Addition
+          </p>
+          <h1
+            class="text-4xl md:text-7xl font-Quicksand text-white font-light leading-tight"
+          >
+            A Watch for Every <br />
+            Journey,
+            <span class="text-brn-300 font-serif font-semibold md:text-7xl"
+              >Every Occasion</span
+            >
+          </h1>
+          <p
+            class="text-base font-light font-Inter text-gray-500 mt-6 max-w-md mx-auto md:mx-0"
+          >
+            Lorem ipsum dolor sit amet consectetur. Aliquam turpis risus
+            pellentesque leo vitae diam elementum. Nam pellentesque lectus et
+            iaculis vitae rhoncus bibendum. Etiam.
+          </p>
+
+          <div
+            class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+          >
+            <button
+              class="bg-white text-black px-6 py-3 rounded-md font-medium text-sm hover:bg-white/50 hover:backdrop-blur-md hover:text-black transition duration-300 ease-in-out"
+            >
+              Shop Now ➜
+            </button>
+            <button
+              class="text-white px-6 py-3 rounded-md font-medium text-sm flex items-center justify-center gap-2 bg-gradient-to-r from-brn-300 via-brn-100 to-brn-200 bg-[length:200%_100%] bg-left hover:bg-right transition-all duration-700 ease-in-out"
+            >
+              Add to Cart <i class="fas fa-cart-shopping"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Image Right Side -->
+        <div class="md:w-1/2">
+          <img
+            src="./assets/images/header/hero-image.png"
+            alt="Watch Banner"
+            class="w-full h-full"
+          />
+        </div>
+      </div>
+    </section>
   </body>
 </html>
